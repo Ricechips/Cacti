@@ -51,4 +51,59 @@ mysql>grant all privileges on cacti.* to cacti@localhost identified by ‘passwo
 mysql>grant select on mysql.time_zone_name to cacti@localhost identified by ‘password’;
 mysql>flush privileges;
 ```
+>我的配置过程
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-27%2014-53-38%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 >导入cacti数据库
+官网下载包[跳转](https://www.cacti.net/download_cacti.php)
+解压到目录下
+```c
+mysql -uroot -p123456
+mysql>use cacti ;
+mysql > source /root/cacti-1.2.1/cacti.sql ;
+在/var/www/html/下创建mkdir cacti
+cp -r /root/cacti-1.2.1/* /var/www/html/cacti
+
+vi /var/www/html/cacti/include/config.php修改配置信息
+$database_type = ‘mysql’;
+$database_default = ‘cacti’;
+$database_hostname = ‘localhost’;
+$database_username = ‘cacti’;
+$database_password = ‘password’;
+$database_port = ‘3306’;
+$database_ssl = false;
+
+增加cacti用户权限
+useradd -s /sbin/nologin cacti
+mkdir /var/www/html/cacti/rra/log
+chown -R cacti /var/www/html/cacti/rra/log/
+
+配置定时任务crontab
+crontab –e
+添入内容*/5 * * * * /usr/bin/php /var/www/html/cacti/poller.php > /dev/null 2>&1
+crontab -l有输出即正常
+systemctl enable crond
+systemctl start crond
+
+安装其他相关组件
+https://oss.oetiker.ch/rrdtool/pub/rrdtool-1.7.0.tar.gz
+https://www.cacti.net/downloads/spine/cacti-spine-1.2.1.tar.gz
+编译时需要的软件包
+yum install glib2-devel cairo-devel libxml2-devel pango pango-devel help2man
+
+解压后cd rrdtool-1.7.0
+./configure --prefix=/usr/local/rrdtool
+make
+make install
+
+cd cacti-spine-1.2.1
+./configure --prefix=/usr/local/spine
+make
+make install
+编辑/usr/local/spine/etc/spine.conf
+vi /usr/local/spine/etc/spine.conf修改配置信息
+DB_Host localhost
+DB_Database cacti
+DB_User cacti
+DB_Pass password
+DB_Port 3306
+

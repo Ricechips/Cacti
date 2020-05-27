@@ -1,5 +1,5 @@
 # Cacti
-
+>蛮麻烦的
 ## 环境
 > `服务端:Centos7`  `被监控端:win10`
 
@@ -107,3 +107,10 @@ DB_User cacti
 DB_Pass password
 DB_Port 3306
 
+web初始化cacti
+setenforce 0关闭防火墙
+浏览器访问ip/cacti
+log报错修改：chmod 777 /var/www/html/cacti/log
+默认密码admin/admin
+```
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-27%2016-48-51%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

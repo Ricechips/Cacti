@@ -41,7 +41,7 @@ collation-server=utf8mb4_unicode_ci
 重启systemctl restart mysqld
 mysql -uroot -p
 mysql>create database cacti character set utf8;
-mysql> ALTER DATABASE cacti CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+mysql>ALTER DATABASE cacti CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 exit退出至root /etc/my.cnf 注释掉#skip-grant-tables 重启mysql
 进入mysql
 mysql>set global validate_password_policy=LOW;
@@ -59,7 +59,7 @@ mysql>flush privileges;
 ```c
 mysql -uroot -p123456
 mysql>use cacti ;
-mysql > source /root/cacti-1.2.1/cacti.sql ;
+mysql>source /root/cacti-1.2.1/cacti.sql ;
 在/var/www/html/下创建mkdir cacti
 cp -r /root/cacti-1.2.1/* /var/www/html/cacti
 

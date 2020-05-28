@@ -1,7 +1,7 @@
 # Cacti
 >蛮麻烦的
 ## 环境
-> `服务端:Centos7`  `被监控端:win10`
+> `服务端:Centos7`  `被监控端:win7`
 
 ## Cacti服务端搭建
 > 安装Mysql<br>
@@ -128,3 +128,9 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 
 ## ok
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-27%2017-45-41%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+
+## 被监控端Win7
+>控制面板开启SNMP服务
+>设置服务团体public,允许任何主机访问
+>关闭防火墙
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-28%2010-08-41%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

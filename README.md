@@ -134,3 +134,6 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >设置服务团体public,允许任何主机访问<br>
 >关闭防火墙<br>
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-28%2010-08-41%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+>yum install perl-devel perl-CPAN perl-YAML<br>
+>perl -MCPAN -e shell<br>
+>cpan> install LWP::UserAgent

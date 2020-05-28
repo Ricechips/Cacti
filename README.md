@@ -125,6 +125,7 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >4.Set global max_allowed_packet=17700000;<br>
 >5.权限问题（不可写入）chmod a+w /var/www/html/cacti/resource/snmp_queries/或777<br>
 >6.cacti无法显示图像：chmod 777 -R /var/www/html/cacti/rra并service snmpd restart<br>
+>7.监控本机localhost，snmp返回失败：修改主机名为127.0.0.1而不是localhost
 
 ## ok
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-27%2017-45-41%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

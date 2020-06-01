@@ -138,3 +138,13 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >yum install perl-devel perl-CPAN perl-YAML<br>
 >perl -MCPAN -e shell<br>
 >cpan> install LWP::UserAgent
+
+
+## 被监控端Centos7
+>yum -y install net-snmp net-snmp-utils
+>com2sec notConfigUser 192.168.106.201 public
+>access notConfigGroup '''' any noauth exact all none none
+>view all included .1 80
+>view systemview included .1.3.6.1.2.1.2
+>service snmpd start
+>测试 snmpwalk -v 2c-c public 192.168.106.

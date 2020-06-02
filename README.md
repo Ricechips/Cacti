@@ -148,3 +148,21 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >view systemview included .1.3.6.1.2.1.2<br>
 >service snmpd start<br>
 >测试 snmpwalk -v 2c-c public 192.168.106.
+
+## 监控ESXI
+>vsphere client打开esxi的ssh服务<br>
+>putty上去配置snmp(/etc/vmware/snmp.xml<br>
+```c
+<config>
+<snmpSettings>
+<enable>true</enable> #将标签false改为true.
+<port>161</port>
+<EnvEventSource>indications</EnvEventSource>
+<loglevel>info</loglevel>
+<communities>public</communities>  #社区名称
+<targets></targets>
+</snmpSettings>
+</config>
+```
+>cacti添加esxi主机(同一网段)<br>
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-02%2015-51-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

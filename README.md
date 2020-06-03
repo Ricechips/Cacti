@@ -173,6 +173,6 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2010-30-37%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
 ## 配置邮件报警
->qq邮箱开启smtp并获得授权码
+>qq邮箱开启smtp并获得授权码<br>
 >在cacti管理界面输入相应信息并发送测试邮件
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-01-00%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

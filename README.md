@@ -166,3 +166,8 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 ```
 >cacti添加esxi主机(同一网段)<br>
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-02%2015-51-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+
+## 监控Cisco交换机
+>交换机用com口转usb线连接到win，putty通过com3口登陆进行snmp的配置(网段ip)<br>
+>服务器添加交换机<br>
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2010-30-37%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)

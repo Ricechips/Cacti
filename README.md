@@ -176,3 +176,18 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >qq邮箱开启smtp并获得授权码<br>
 >在cacti管理界面输入相应信息并发送测试邮件
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-01-00%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+
+## 升级Cacti
+>因插件版本问题，将原本的Cacti1.2.1升级到最新版1.2.12(2020.5.3)
+```c
+备份数据库 mysqldump -uroot -p123456 -l --add-drop-table cacti > cacti_old.sql
+备份cacti根目录 mv /var/www/html/cacti /var/www/html/cacti_old
+官网下载最新版包mv cacti-1.2.12/ /var/www/html/cacti
+vim /data/www/cacti/include/config.php 数据库配置同前
+cp /var/www/html/cacti_old/rra/* /var/www/html/cacti/rra/
+cp -u /var/www/html/cacti_old/scripts/* /var/www/html/cacti/scripts/
+cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
+```
+刷新管理平台界面并安装
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-46-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+

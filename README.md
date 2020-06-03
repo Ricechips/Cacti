@@ -188,6 +188,6 @@ cp /var/www/html/cacti_old/rra/* /var/www/html/cacti/rra/
 cp -u /var/www/html/cacti_old/scripts/* /var/www/html/cacti/scripts/
 cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 ```
-刷新管理平台界面并安装
+>刷新管理平台界面并安装
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-46-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 

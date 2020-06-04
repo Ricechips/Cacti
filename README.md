@@ -191,3 +191,9 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 >刷新管理平台界面并安装
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-46-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
+## 配置Thold警报机制
+>从cacti的github界面下载插件thold包[跳转](https://github.com/Cacti/plugin_thold/archive/develop.zip)<br><br>
+>将包解压后放在/var/www/html/cacti/plugins路径下并改名为thold<br>
+>刷新控制台，安装插件<br>
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-04%2010-31-42%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+>根据图形模版来设置阀(fa)值

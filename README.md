@@ -108,7 +108,8 @@ DB_Pass password
 DB_Port 3306
 
 web初始化cacti
-setenforce 0关闭防火墙
+setenforce 0关闭防火墙 临时关闭或
+vi /etc/selinux/config  将SELINUX=enforcing改为SELINUX=disabled 永久关闭
 浏览器访问ip/cacti
 log报错修改：chmod 777 /var/www/html/cacti/log
 默认密码admin/admin
@@ -142,6 +143,7 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 
 ## 被监控端Centos7
 >yum -y install net-snmp net-snmp-utils<br>
+>/etc/snmp/snmpd.conf<br>
 >com2sec notConfigUser 192.168.106.201 public<br>
 >access notConfigGroup '''' any noauth exact all none none<br>
 >view all included .1 80<br>

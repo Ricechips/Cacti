@@ -200,3 +200,10 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-04%2010-31-42%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 >根据图形模版来设置阈值
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/TIM%E5%9B%BE%E7%89%8720200604104626.png)
+
+## 配置开源邮件服务器EwoMail接收报警
+>EwoMail官方文档[跳转](http://doc.ewomail.com/docs/ewomail/install)<br>
+>邮件smtp配置及效果图<br>
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/Screenshot%20from%202020-06-18%2010-05-46.png)
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-18%2009-58-11%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+

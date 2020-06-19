@@ -144,10 +144,10 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 ## 被监控端Centos7
 >yum -y install net-snmp net-snmp-utils<br>
 >/etc/snmp/snmpd.conf<br>
->com2sec notConfigUser 192.168.106.201 public<br>
->access notConfigGroup '''' any noauth exact all none none<br>
->view all included .1 80<br>
->view systemview included .1.3.6.1.2.1.2<br>
+>com2sec notConfigUser default public<br>
+>access notConfigGroup '''' any noauth exact *all* none none<br>
+>去掉注释#view all included .1 80<br>
+>加一行view all included .1<br>
 >service snmpd start<br>
 >测试 snmpwalk -v 2c-c public 192.168.106.
 
@@ -206,4 +206,10 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 >邮件smtp配置及效果图<br>
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/Screenshot%20from%202020-06-18%2010-05-46.png)
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-18%2009-58-11%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+
+## 线上的离线环境centos系统安装snmp服务
+>下载rpm包，根据依赖一个一个安装<br>
+>包的下载地址:https://rpmfind.net/<br>
+>示例:
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-46-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 

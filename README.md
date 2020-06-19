@@ -211,5 +211,5 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 >下载rpm包，根据依赖一个一个安装<br>
 >包的下载地址:https://rpmfind.net/<br>
 >示例:
-![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-06-03%2014-46-40%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/%E6%8D%95%E8%8E%B7.PNG)
 

@@ -149,7 +149,7 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >去掉注释#view all included .1 80<br>
 >加一行view all included .1<br>
 >service snmpd start<br>
->测试 snmpwalk -v 2c-c public 192.168.106.
+>测试 snmpwalk -v 2c- c public 192.168.106.xx
 
 ## 监控ESXI
 >vsphere client打开esxi的ssh服务<br>

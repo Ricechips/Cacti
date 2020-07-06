@@ -95,18 +95,6 @@ yum install glib2-devel cairo-devel libxml2-devel pango pango-devel help2man
 make
 make install
 
-cd cacti-spine-1.2.1
-./configure --prefix=/usr/local/spine
-make
-make install
-编辑/usr/local/spine/etc/spine.conf
-vi /usr/local/spine/etc/spine.conf修改配置信息
-DB_Host localhost
-DB_Database cacti
-DB_User cacti
-DB_Pass password
-DB_Port 3306
-
 web初始化cacti
 setenforce 0关闭防火墙 临时关闭或
 vi /etc/selinux/config  将SELINUX=enforcing改为SELINUX=disabled 永久关闭
@@ -214,7 +202,7 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/%E6%8D%95%E8%8E%B7.PNG)
 
 ## 轮询器优化cmd->spine
-下载最新包 源码编译时报错:c compiler cannot create executables<br>
+官网下载最新包 源码编译时报错:c compiler cannot create executables<br>
 一开始以为是gcc没装好，remove后重装还是报错，找了十来篇文章无果，突然看到一篇
 ```c
 查找原因，查看config.log 日志
@@ -230,5 +218,17 @@ configure:error: Cannot find SNMP headers.  Use--with-snmp= to specify non-defau
 网上说要./configure --prefix=/usr/local/spine --with-snmp=/usr/local/net-snmp
 我find了一下，发现两个路径都不对，文章还都是copy来copy去的，一模一样，继续找下去终于正解
 解决办法：# yum install -y net-snmp-devel
+```
+配置
+```c
+cp /usr/local/spine/etc/spine.conf.dist  /usr/local/spine/etc/spine.conf
+vi /usr/local/spine/etc/spine.conf
+填写数据库信息，即Cacti数据库
+DB_Host         localhost
+DB_Database     cacti
+DB_User         cacti
+DB_Pass         password
+DB_Port         3306
+测试是否正常 /usr/local/spine/bin/spine
 ```
 

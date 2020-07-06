@@ -120,7 +120,7 @@ log报错修改：chmod 777 /var/www/html/cacti/log
 >1.报错：Your MySQL TimeZone database is not populated. Please populate this database before proceeding.<br>
 >修改：mysql_tzinfo_to_sql /usr/share/zoneinfo/Asia/Shanghai Shanghai | mysql -u root -p mysql<br>
 >2.报错：A valid timezone that matches MySQL and the system<br>
->修改：vim /etc/php.ini 将data.timezone前面的分号去掉<br>
+>修改：vim /etc/php.ini 将date.timezone前面的分号去掉(重启httpd)<br> 
 >3.报错：某些php模块显示没有安装<br>
 >修改：yum install -y php-缺少的模块名,安装之后systemctl restart httpd并刷新cacti网页<br>
 >4.Set global max_allowed_packet=17700000;<br>

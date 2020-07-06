@@ -213,3 +213,22 @@ cp -u -R /var/www/html/cacti_old/resource/* /var/www/html/cacti/resource/
 >示例:
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/%E6%8D%95%E8%8E%B7.PNG)
 
+## 轮询器优化cmd->spine
+下载最新包 源码编译时报错:c compiler cannot create executables<br>
+一开始以为是gcc没装好，remove后重装还是报错，找了十来篇文章无果，突然看到一篇
+```c
+查找原因，查看config.log 日志
+真正的错误并不在这里，而是在最后一个错误出现的地方
+我遇到的错误是：   “collect2: ld returned 1 exit status”
+因为缺少了动态库文件。
+我这里缺少的是lssl，就是openssl的库文件。
+使用命令yum install -y openssl-devel（前面没装的原因）
+```
+本来开心的一，又报错
+```c
+configure:error: Cannot find SNMP headers.  Use--with-snmp= to specify non-default path.
+网上说要./configure --prefix=/usr/local/spine --with-snmp=/usr/local/net-snmp
+我find了一下，发现两个路径都不对，文章还都是copy来copy去的，一模一样，继续找下去终于正解
+解决办法：# yum install -y net-snmp-devel
+```
+

@@ -10,7 +10,7 @@
 > 安装LAMP<br>
 > *yum install httpd mysql-server php php-gd php-mysql -y*<br>
 > 安装RRDtool<br>
-> *yum install rrdtool rrdtool-devel.x84_64 rrdtool-perl.x86_64 -y*<br>
+> *yum install rrdtool rrdtool-devel.x86_64 rrdtool-perl.x86_64 -y*<br>
 > 安装SNMP<br>
 > *yum install net-snmp-utils -y*<br>
 > 部署LAMP<br>

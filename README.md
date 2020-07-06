@@ -15,7 +15,7 @@
 > *yum install net-snmp-utils -y*<br>
 > 部署LAMP<br>
 ```c
-/usr/bin/mysql –initialize –basedir=/usr/share/mysql –datadir=/var/lib/mysql/data/ 初始化Mysql
+*/usr/bin/mysql –initialize –basedir=/usr/share/mysql –datadir=/var/lib/mysql/data/ 初始化Mysql*
 systemctl start mysqld
 vim /etc/my.cnf 在末行添加 skip-grant-tables 跳过密码验证
 systemctl restart mysqld

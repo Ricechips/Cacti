@@ -27,7 +27,7 @@ date.timezone = “Asia/Shanghai”添加时区
 systemctl start httpd
 vi /var/www/html/phpinfo.php
 添入测试文本<?php phpinfo(); ?> 
-浏览器访问ip/phpinfo.php
+浏览器访问ip/phpinfo.php  (firewalld)
 ```
 ![avatar](https://github.com/Ricechips/Cacti/blob/master/PrtScn/2020-05-27%2014-41-45%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
